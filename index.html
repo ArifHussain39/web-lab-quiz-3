@@ -29,27 +29,41 @@
         <div class="right-side">
             <h1>Sign Up</h1>
             <h4>Get started absolutely free</h4>
-            <form class="sign-in-form" >
+            <form class="sign-in-form">
                 <div class="input-group">
                     <label for="email">Email</label>
-                    <input type="text" id="email" name="email" >
+                    <input type="text" id="email" name="email">
                 </div>
                 <div class="input-group">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" >
+                    <input type="password" id="password" name="password">
                 </div>
                 <div class="input-group">
-                    <label for="terms" style="font-size: smaller;"><input type="checkbox" class="checkbox">Creating an
+                    <label for="terms" style="font-size: smaller;"><input type="checkbox" id="checkboxx">Creating an
                         account means you’re okay with our Terms of Service, Privacy Policy, and default Notification
                         Settings</label>
                 </div>
-                <button  class="sign-up-btn" onclick="checkUserData()">Sign Up</button>
+                <button class="sign-up-btn" onclick="checkUserData()">Sign Up</button>
             </form>
+
+            <span id="userDataSpan"></span>
         </div>
     </div>
 
-    <script src="/assets/js/script.js">
+    <script>
+        function checkUserData() {
+            // Get the email and password values from the form
+            var check = document.getElementById("checkboxx");
+            if (check.checked) {
+                const email = document.getElementById("email").value;
+                const password = document.getElementById("password").value;
+                console.log(email);
+                console.log(password);
+            } else {
+                alert("check the box")
+            }
 
+        }
     </script>
 </body>
 
